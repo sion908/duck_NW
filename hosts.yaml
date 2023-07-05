@@ -1,0 +1,19 @@
+---
+all:
+  vars:
+    ansible_user: janoger
+    ansible_password: hackathon
+  hosts:
+    duck1:
+      ansible_host: 192.168.111.102
+      ansible_port: 32903 
+  children:
+    server:
+      hosts:
+        duck2:
+          ansible_host: 192.168.111.102
+          ansible_port: 32901
+        goose:
+          ansible_host: 192.168.10.7
+          ansible_port: 32902
+
